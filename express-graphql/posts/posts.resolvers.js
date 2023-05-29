@@ -3,6 +3,7 @@ module.exports = {
     Query: {
         posts: () => {
             return postsModel.getAllPosts();
-        }
+        },
+        post: (_, args) => {}
     }
 }

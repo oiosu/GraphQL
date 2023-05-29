@@ -12,7 +12,19 @@ const loadedFiles = loadFilesSync("**/*", {
 
 
 const schema = makeExecutableSchema ({
-    typeDefs: loadFiles
+    typeDefs: loadFiles,
+    resolvers: {
+        Query: {
+            post: (parent, args, context, info) => {
+                const product = await Promise.resolve(parent.posts);
+                return product;
+            },
+            comments: async (parent) => {
+                const comment = await Promise.resolve(parent.comments);
+                return comment;
+            }
+        }
+    }
 });
 
 const root = {

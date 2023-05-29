@@ -1,0 +1,9 @@
+type Query {
+    comments: [Comments]
+}
+
+type Comment {
+    id: ID!
+    test: String!
+    likes: Int
+}

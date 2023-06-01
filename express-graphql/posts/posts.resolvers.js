@@ -6,4 +6,9 @@ module.exports = {
         },
         post: (_, args) => {}
     }
+}, 
+Mutation: {
+    addNewPost: (_, args) => {
+        return postsModel.addNewPost(args.id, args.title, args.description)
+    }
 }

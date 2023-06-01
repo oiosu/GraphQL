@@ -1,10 +1,14 @@
 type Query {
-    comments: [Comment]
-    commentsByLikes(minLikes: Int!): [Comment]
+  comments: [Comment]
+  commentsByLikes(minLikes: Int!): [Comment]
+}
+
+type Mutation {
+  addNewComment(id: ID!, text: String!): Comment
 }
 
 type Comment {
-    id: ID!
-    test: String!
-    likes: Int
+  id: ID!
+  test: String!
+  likes: Int
 }

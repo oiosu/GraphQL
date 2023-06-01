@@ -1,12 +1,16 @@
-const commentsModel = require('./comments.model');
+const commentsModel = require("./comments.model");
 module.exports = {
-    Query: {
-        comments: () => {
-            return commentsModel.getAllComments();
-        },
-        commentsByLikes: (_, args) => {
-            return commentsModel.getCommentByLikes(args.minLikes);
-            }
-        }
-    }
-}
+  Query: {
+    comments: () => {
+      return commentModel.getAllComments();
+    },
+    commentsByLikes: (_, args) => {
+      return commentModel.getCommentsByLikes(args.minLikes);
+    },
+  },
+  Mutation: {
+    addNewComment: (_, args) => {
+      return commentModel.addNewComment(args.id, args.text);
+    },
+  },
+};

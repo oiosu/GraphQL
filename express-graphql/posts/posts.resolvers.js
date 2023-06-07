@@ -1,14 +1,14 @@
-const postsModel = require('./posts.model');
+const postsModel = require("./posts.model");
 module.exports = {
-    Query: {
-        posts: () => {
-            return postsModel.getAllPosts();
-        },
-        post: (_, args) => {}
-    }
-}, 
-Mutation: {
+  Query: {
+    posts: () => {
+      return postsModel.getAllPosts();
+    },
+    post: (_, args) => {},
+  },
+  Mutation: {
     addNewPost: (_, args) => {
-        return postsModel.addNewPost(args.id, args.title, args.description)
-    }
-}
+      return postsModel.addNewPost(args.id, args.title, args.description);
+    },
+  },
+};

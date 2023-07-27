@@ -26,7 +26,7 @@ type Project {
 ```javascript
 {
     "project" : {
-        "tagline" : "A query language fo APIs"
+        "tagline" : "A query language for APIs"
     }
 }
 ```
